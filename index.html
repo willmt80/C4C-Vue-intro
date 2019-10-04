@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p v-if = "seen"> 
+                {{ message }}
+            </p>
+            <input v-model ="message">
+            <br>
+            <button v-on:click="addExclamation">Get More Excited!</button>
+            <ol>
+                <li v-for = "grocery in groceries">
+                    {{ grocery.item }}
+                </li>
+            </ol>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>

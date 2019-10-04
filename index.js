@@ -1,3 +1,16 @@
+// Creates a basic component that can be called in HTML files
+Vue.component('sad-list', {
+    // Stuff within the template is written in html
+    template: '<li>This is a component</li>'
+})
+
+// A list component that can use name from app.data
+Vue.component('reusable-name-list', {
+    props: ['item'], // item is the same as the 'item' in the template
+    template: '<li> {{ item.text }} </li>'
+    // v-bind is used to link item to some item in a list
+})
+
 var app = new Vue({
     // Where the Vue object is pointing. The is in <div> tag where id = "app"
     el: '#app',
@@ -12,6 +25,12 @@ var app = new Vue({
             { item: 'bagel' },
             { item: 'orange' },
             { item: 'tofu' }
+        ],
+
+        firstNames: [
+            {id: 0, text: 'John'},
+            {id: 1, text: 'Anne'},
+            {id: 2, text: 'Will'}
         ]
     },
     // Defining functions seperately from data

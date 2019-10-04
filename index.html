@@ -4,17 +4,33 @@
     </head>
     <body>
         <div id="app">
+            <h5>v-if</h5>
             <p v-if = "seen"> 
                 {{ message }}
             </p>
+            <h5>v-model</h5>
             <input v-model ="message">
             <br>
+            <h5>v-on:click</h5>
             <button v-on:click="addExclamation">Get More Excited!</button>
+            <h5>v-for</h5>
             <ol>
                 <li v-for = "grocery in groceries">
                     {{ grocery.item }}
                 </li>
             </ol>
+            <h5>Sad List (component)</h5>
+            <ol>
+                <sad-list></sad-list>
+            </ol>
+            <h5>Prop Component (v-for and v-bind)</h5>
+            <ol>
+                <reusable-name-list
+                    v-for = "name in firstNames"
+                    v-bind:item = "name"
+                    v-bind:key = "name.id">
+                </reusable-name-list>
+            </ol>    
         </div>
 
         <script src="index.js"></script>
